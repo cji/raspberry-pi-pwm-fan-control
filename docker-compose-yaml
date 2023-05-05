@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  gpio:
+    container_name: gpio
+    restart: unless-stopped
+    image: localhost/gpio:latest
+    volumes:
+      - /sys/devices/virtual/thermal/thermal_zone0/temp:/sys/devices/virtual/thermal/thermal_zone0/temp
+      - /sys/class/pwm/pwmchip0:/sys/class/pwm/pwmchip0
+      
